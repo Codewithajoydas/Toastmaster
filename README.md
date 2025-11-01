@@ -36,18 +36,23 @@ Add the following lines inside your HTML `<head>` or before the closing `<body>`
 ## Usage Example
 
 ```html
-<script>
-  const toast = new Toastmaster();
+<script src="https://cdn.jsdelivr.net/npm/@codewithajoydas/toastmaster@2.3.5/dist/toaster.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@codewithajoydas/toastmaster@2.3.5/dist/toaster.min.css">
 
-  toast.showNotification({
-    title: "Success",
-    message: "Your data has been saved successfully!",
-    type: "success", // success | error | info | warning
-    delay: 3000,     // duration in ms
-    position: "topRight", // topRight | bottomRight | topLeft | bottomLeft
-    callBackFuntion: () => console.log("Toast closed"),
-  });
+<script>
+  new Toastmaster({
+    title: "Error", // text displayed in the toast header
+    message: "Please enter your email", // main message body
+    type: "error", // success | error | info | warning
+    delay: 3000, // auto-close time in milliseconds
+    position: "bottomRight", // topRight | topLeft | bottomRight | bottomLeft
+    overRideDefaultstyle: false, // true = use your own CSS
+    callBackFuntion: () => {
+      console.log("Toast closed after timeout or manual close");
+    }
+  }).showNotification();
 </script>
+
 ```
 
 ---
