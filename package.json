@@ -1,8 +1,14 @@
 {
   "name": "@codewithajoydas/toastmaster",
-  "version": "2.3.1",
+  "version": "3.0.0",
   "description": "A lightweight, customizable toast notification library for the web.",
   "main": "dist/toaster.min.js",
+  "style": "dist/toaster.min.css",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "keywords": [
     "toast",
     "notification",
@@ -15,7 +21,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/codewithajoydas/toastmaster"
+    "url": "https://github.com/codewithajoydas/Toastmaster"
   },
   "scripts": {
     "build": "npm run minify:js && npm run minify:css",

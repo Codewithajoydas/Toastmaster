@@ -11,7 +11,7 @@
  */
 `use strict`;
 
-class Notification {
+class Toastmaster {
   constructor({
     title,
     message,
@@ -20,7 +20,7 @@ class Notification {
     position = "bottomRight",
     overRideDefaultstyle,
     callBackFuntion,
-  } = options) {
+  } = {}) {
     this.title = title;
     this.message = message;
     this.delay = delay;
@@ -28,9 +28,14 @@ class Notification {
     this.position = position;
     this.overRideDefaultstyle = overRideDefaultstyle;
     this.callBackFuntion = callBackFuntion;
+    this.buttons = buttons;
   }
 
   showNotification() {
+    let t = document.querySelector(".toast");
+    if (t) {
+      t.remove();
+    }
     document.body.insertAdjacentHTML(
       "afterbegin",
       `  <div class="toast ${this.type} ${this.position}">
